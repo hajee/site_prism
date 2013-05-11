@@ -3,7 +3,7 @@ module SitePrism::ElementContainer
   def element(element_name, *find_args)
     build element_name, *find_args do
       define_method element_name.to_s do
-        find_first *find_args
+        find *find_args
       end
     end
   end
@@ -20,7 +20,7 @@ module SitePrism::ElementContainer
   def section(section_name, section_class, *find_args)
     build section_name, *find_args do
       define_method section_name do
-        section_class.new self, find_first(*find_args)
+        section_class.new self, find(*find_args)
       end
     end
   end

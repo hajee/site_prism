@@ -32,7 +32,7 @@ module SitePrism
 
     private
 
-    def find_first *find_args
+    def find *find_args
       root_element.find *find_args
     end
 
